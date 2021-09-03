@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mansour_challenge/customWidgets/custom.dart';
 
 import 'register.dart';
-class home extends StatelessWidget {
 
+class home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,21 +19,36 @@ class home extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
+            Center(
+                child: Text(
+              "Welcome Back!",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            )),
+            Center(
+                child: Text(
+              "Login to your existing account of Q allure",
+              style: TextStyle(fontSize: 12,color: Colors.grey),
+            )),
+            SizedBox(
+              height: 15,
+            ),
             CustomTextField(
                 hint: 'Email Adress', icon: Icons.person, obscureText: false),
             SizedBox(
-              height: 25,
+              height: 10,
             ),
             CustomTextField(
                 hint: 'Password', icon: Icons.lock, obscureText: true),
             SizedBox(
-              height: 50,
+              height: 10,
             ),
-            Center(
+            Container(
+              padding: EdgeInsets.only(right: 20),
+              alignment: Alignment.centerRight,
               child: Text('Forgot password ?'),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 100),
@@ -70,7 +85,7 @@ class home extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(
-                          Icons.g_mobiledata_rounded,
+                          Icons.g_mobiledata,
                           size: 30,
                           color: Colors.white,
                         ),
@@ -117,7 +132,8 @@ class home extends StatelessWidget {
                 Text("Don\'t have an account ?"),
                 TextButton(
                   onPressed: (() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>register()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => register()));
                   }),
                   child: Text("Sign up"),
                 )
